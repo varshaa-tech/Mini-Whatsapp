@@ -87,10 +87,10 @@ app.put("/chats/:id", async (req, res) => {
 });
 
 
-app.get("/",(req,res)=>{
-    res.send("root is working");
-      res.redirect("/chats");
+app.get("/", (req, res) => {
+    res.redirect("/chats");
 });
+
 // Destroy route
 app.delete('/chats/:id', async (req, res) => {
   await Chat.findByIdAndDelete(req.params.id);
