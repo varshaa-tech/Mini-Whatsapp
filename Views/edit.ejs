@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Chat</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      padding: 30px;
+    }
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input, button {
+      padding: 10px;
+      width: 100%;
+      margin: 10px 0;
+      font-size: 1em;
+    }
+    button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Edit Message</h2>
+    <form action="/chats/<%= chat._id %>?_method=PUT" method="POST">
+      <input type="text" name="from" value="<%= chat.from %>" required />
+      <input type="text" name="to" value="<%= chat.to %>" required />
+      <input type="text" name="msg" value="<%= chat.msg %>" required />
+      <button type="submit">Update Chat</button>
+    </form>
+  </div>
+</body>
+</html>
